@@ -13,3 +13,16 @@ const parkTypesArray = [
     "Trail",
     "Parkway"
 ]
+
+window.onload = function () {
+    // HTML element variables
+    const typeSelect = document.getElementById("typeSelect");
+    function loadParks() {
+      for (const park of parkTypesArray) {
+        const option = document.createElement("option");
+        option.innerText = park;
+        typeSelect.appendChild(option);
+      }
+    }
+    loadParks();
+}

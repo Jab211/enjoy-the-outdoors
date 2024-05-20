@@ -67,7 +67,7 @@ window.onload = function () {
       locationSelect.appendChild(option);
     }
   }
-loadStates();
+  loadStates();
   //functions
 
   //event handling
