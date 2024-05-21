@@ -59,7 +59,27 @@ const locationsArray = [
 
 window.onload = function () {
   // HTML element variables
-  const locationSelect = document.getElementById("locationSelect");
+  const locationButton = document.querySelector("#locationButton");
+  const parkTypeButton = document.querySelector("#parkTypeButton");
+
+  const locationContainer = document.querySelector("#locationContainer");
+  const parkTypeContainer = document.querySelector("#parkTypeContainer");
+
+  const locationSelect = document.querySelector("#locationSelect");
+
+  function searchTypeChanged() {
+    if (locationButton.checked) {
+      locationContainer.style.display = "block";
+    } else {
+      locationContainer.style.display = "none";
+    }
+    if (parkTypeButton.checked) {
+      parkTypeContainer.style.display = "block";
+    } else {
+      parkTypeContainer.style.display = "none";
+    }
+  }
+
   function loadStates() {
     for (const location of locationsArray) {
       const option = document.createElement("option");
@@ -67,10 +87,17 @@ window.onload = function () {
       locationSelect.appendChild(option);
     }
   }
-  loadStates();
+  locationButton.addEventListener("change", searchTypeChanged);
+  parkTypeButton.addEventListener("change", searchTypeChanged);
+//   locationButton.onchange = searchTypeChanged;
+//   parkTypeButton.onchange = searchTypeChanged;
+  searchTypeChanged();
+  
+
   //functions
 
   //event handling
 
   //initial loading
+  loadStates();
 };

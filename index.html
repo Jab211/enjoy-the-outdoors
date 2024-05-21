@@ -18,24 +18,30 @@
             </div>
           </nav> -->
     <main>
-      <input type="radio" />
-      <label for="byLocation">By Location</label>
-      <input type="radio" />
-      <label for="byType">By Type</label>
+      <div>
+        <input type="radio" id="locationButton" name="searchType"/>
+        <label for="locationButton">By Location</label>
+
+        <input type="radio" id="parkTypeButton" name="searchType"/>
+        <label for="parkTypeButton">By Type</label>
+      </div>
+
       <h3>States/Territories</h3>
-      <form>
+      <br />
+
+      <div id="locationContainer">
         <label for="locationSelect">States</label>
         <select id="locationSelect">
           <option value="">Select...</option>
         </select>
+      </div>
+      <div id="parkTypeContainer">
         <label for="typeSelect">Parks</label>
         <select id="typeSelect">
           <option value="">Select...</option>
         </select>
-      </form>
+      </div>
 
-      <form>
-      </form>
       <p id=""></p>
 
       <!-- <table>
