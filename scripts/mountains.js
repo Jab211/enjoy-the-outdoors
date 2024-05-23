@@ -29,7 +29,7 @@ window.onload = function () {
     cell4.innerText = mountain.desc;
 
     let cell5 = row.insertCell();
-    cell5.innerText = mountain.coords;
+    cell5.innerText = "Latitude: " + mountain.coords.lat + ", " + " Longitude:" + mountain.coords.lng;
 
     let cell6 = row.insertCell();
     let img = document.createElement("img");

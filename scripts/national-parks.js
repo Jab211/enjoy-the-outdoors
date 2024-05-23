@@ -38,7 +38,7 @@ function loadStates() {
 }
 
 function loadParks() {
-  typeSelect.innerHTML = ""; // Clear existing options
+  typeSelect.innerHTML = '<option value="">Select...</option>'; // Clear existing options
 
   const selectedType = typeSelect.value.toLowerCase(); // Get the selected park type
 
@@ -84,7 +84,12 @@ function buildParkRow(nationalPark) {
   cell1.innerText = nationalPark.LocationName;
 
   const cell2 = row.insertCell();
-  cell2.innerText = nationalPark.Address;
+  if (nationalPark.Address) {
+    cell2.innerText = nationalPark.Address;
+  } else {
+    cell2.innerText = "N/A"
+  }
+ 
 
   const cell3 = row.insertCell();
   cell3.innerText = nationalPark.City;
@@ -93,8 +98,13 @@ function buildParkRow(nationalPark) {
   cell4.innerText = nationalPark.State;
 
   const cell5 = row.insertCell();
-  cell5.innerText = nationalPark.ZipCode;
-
+  if (nationalPark.ZipCode) {
+      if (nationalPark.ZipCode >= 0) {
+          cell5.innerText = nationalPark.ZipCode;
+      } else {
+          cell5.innerText = "N/A";
+      }
+    }
   const cell6 = row.insertCell();
 
   if (nationalPark.Phone) {
