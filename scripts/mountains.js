@@ -2,7 +2,7 @@
 
 window.onload = function () {
   const mountainSelect = document.querySelector("#mountainSelect");
-  const mountainCode = mountainSelect.value;
+
 
   function loadMountain() {
     for (const mountain of mountainsArray) {
