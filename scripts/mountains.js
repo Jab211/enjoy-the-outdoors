@@ -2,7 +2,7 @@
 
 window.onload = function () {
   const mountainSelect = document.querySelector("#mountainSelect");
-
+  const mountainDataBody = document.querySelector("#mountainDataBody");
 
   function loadMountain() {
     for (const mountain of mountainsArray) {
@@ -14,27 +14,34 @@ window.onload = function () {
   }
 
   function buildParkRow(mountain) {
-    if (mountain.name === mountainSelect.value) {
-      let row = mountainDataBody.insertRow();
+    let row = mountainDataBody.insertRow();
 
-      let cell1 = row.insertCell();
-      cell1.innerText = mountain.name;
+    let cell1 = row.insertCell();
+    cell1.innerText = mountain.name;
 
-      let cell2 = row.insertCell();
-      cell2.innerText = mountain.elevation;
+    let cell2 = row.insertCell();
+    cell2.innerText = mountain.elevation;
 
-      let cell3 = row.insertCell();
-      cell3.innerText = mountain.effort;
+    let cell3 = row.insertCell();
+    cell3.innerText = mountain.effort;
 
-      let cell4 = row.insertCell();
-      cell4.innerText = mountain.desc;
+    let cell4 = row.insertCell();
+    cell4.innerText = mountain.desc;
 
-      let cell5 = row.insertCell();
-      cell5.innerText = mountain.coords;
-    }
+    let cell5 = row.insertCell();
+    cell5.innerText = mountain.coords;
+
+    let cell6 = row.insertCell();
+    let img = document.createElement("img");
+    img.src = `/images/${mountain.img}`;
+    img.alt = mountain.name;
+    img.style.width = "250rem"; // Adjust as needed
+    cell6.appendChild(img);
   }
+
   loadMountain();
-  mountainSelect.addEventListener("change", function () {
+  
+  mountainSelect.onchange = function () {
     // Clear existing rows in the table
     mountainDataBody.innerHTML = "";
     // Find and display the selected mountain
@@ -44,5 +51,5 @@ window.onload = function () {
     if (selectedMountain) {
       buildParkRow(selectedMountain);
     }
-  });
+  };
 };

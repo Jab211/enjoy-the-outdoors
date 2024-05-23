@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
   </head>
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
-/>
   <body>
     <nav>
       <div>
@@ -22,24 +22,24 @@
       <h1>National Parks</h1>
 
       <div>
-        <input type="radio" id="locationButton" name="searchType" />
+        <input type="radio" id="locationButton" name="searchType" onclick="searchTypeChanged()" />
         <label for="locationButton">By Location</label>
 
-        <input type="radio" id="parkTypeButton" name="searchType" />
+        <input type="radio" id="parkTypeButton" name="searchType" onclick="searchTypeChanged()" />
         <label for="parkTypeButton">By Type</label>
       </div>
 
       <h3 id="headerName"></h3>
 
-      <div id="locationContainer">
+      <div id="locationContainer" style="display: none;">
         <label for="locationSelect">States</label>
-        <select id="locationSelect">
+        <select id="locationSelect" onchange="locationSelectionChanged()">
           <option value="">Select...</option>
         </select>
       </div>
-      <div id="parkTypeContainer">
+      <div id="parkTypeContainer" style="display: none;">
         <label for="typeSelect">Parks</label>
-        <select id="typeSelect">
+        <select id="typeSelect" onchange="typeSelectionChanged()">
           <option value="">Select...</option>
         </select>
       </div>
@@ -57,18 +57,13 @@
               <th>Website</th>
             </tr>
           </thead>
-          <tbody id="parkDataTableBody">
-
-          </tbody>
+          <tbody id="parkDataTableBody"></tbody>
         </table>
       </div>
-
     </main>
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
     <script src="scripts/nationalParkData.js"></script>
-
     <script src="scripts/national-parks.js"></script>
-
   </body>
 </html>
