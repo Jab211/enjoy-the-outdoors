@@ -6,14 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+/>
   <body>
+    <nav>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="national-parks.html">National Parks</a>
+        <a href="mountains.html">Mountains</a>
+      </div>
+    </nav>
     <main>
       <h1>National Parks</h1>
+
+      <div>
+        <input type="radio" id="locationButton" name="searchType" />
+        <label for="locationButton">By Location</label>
+
+        <input type="radio" id="parkTypeButton" name="searchType" />
+        <label for="parkTypeButton">By Type</label>
+      </div>
+
+      <h3 id="headerName"></h3>
+
+      <div id="locationContainer">
+        <label for="locationSelect">States</label>
+        <select id="locationSelect">
+          <option value="">Select...</option>
+        </select>
+      </div>
+      <div id="parkTypeContainer">
+        <label for="typeSelect">Parks</label>
+        <select id="typeSelect">
+          <option value="">Select...</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <table id="parkDataTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Zip</th>
+              <th>Phone</th>
+              <th>Website</th>
+            </tr>
+          </thead>
+          <tbody id="parkDataTableBody">
+
+          </tbody>
+        </table>
+      </div>
+
     </main>
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
     <script src="scripts/nationalParkData.js"></script>
 
     <script src="scripts/national-parks.js"></script>
+
   </body>
 </html>
