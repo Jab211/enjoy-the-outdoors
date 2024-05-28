@@ -11,36 +11,50 @@
     />
   </head>
   <body>
-    <nav >
+    <nav>
       <ul>
         <li><strong>Enjoy the Outdoors</strong></li>
       </ul>
       <ul>
-        <li style="padding-right: 20rem;"><a href="index.html">Home</a></li>
-                <li style="padding-right: 20rem;"><a href="national-parks.html">National Parks</a></li>
-                <li style="padding-right: 20rem;"><a href="mountains.html">Mountains</a></li>
+        <li style="padding-right: 20rem"><a href="index.html">Home</a></li>
+        <li style="padding-right: 20rem">
+          <a href="national-parks.html">National Parks</a>
+        </li>
+        <li style="padding-right: 20rem">
+          <a href="mountains.html">Mountains</a>
+        </li>
       </ul>
     </nav>
     <main>
       <h1>National Parks</h1>
 
       <div>
-        <input type="radio" id="locationButton" name="searchType" onclick="searchTypeChanged()" />
+        <input
+          type="radio"
+          id="locationButton"
+          name="searchType"
+          onclick="searchTypeChanged()"
+        />
         <label for="locationButton">By Location</label>
 
-        <input type="radio" id="parkTypeButton" name="searchType" onclick="searchTypeChanged()" />
+        <input
+          type="radio"
+          id="parkTypeButton"
+          name="searchType"
+          onclick="searchTypeChanged()"
+        />
         <label for="parkTypeButton">By Type</label>
       </div>
 
       <h3 id="headerName"></h3>
 
-      <div id="locationContainer" style="display: none;">
+      <div id="locationContainer" style="display: none">
         <label for="locationSelect">States</label>
         <select id="locationSelect" onchange="locationSelectionChanged()">
           <option value="">Select...</option>
         </select>
       </div>
-      <div id="parkTypeContainer" style="display: none;">
+      <div id="parkTypeContainer" style="display: none">
         <label for="typeSelect">Parks</label>
         <select id="typeSelect" onchange="typeSelectionChanged()">
           <option value="">Select...</option>

@@ -87,9 +87,8 @@ function buildParkRow(nationalPark) {
   if (nationalPark.Address) {
     cell2.innerText = nationalPark.Address;
   } else {
-    cell2.innerText = "N/A"
+    cell2.innerText = "N/A";
   }
- 
 
   const cell3 = row.insertCell();
   cell3.innerText = nationalPark.City;
@@ -99,12 +98,12 @@ function buildParkRow(nationalPark) {
 
   const cell5 = row.insertCell();
   if (nationalPark.ZipCode) {
-      if (nationalPark.ZipCode >= 0) {
-          cell5.innerText = nationalPark.ZipCode;
-      } else {
-          cell5.innerText = "N/A";
-      }
+    if (nationalPark.ZipCode >= 0) {
+      cell5.innerText = nationalPark.ZipCode;
+    } else {
+      cell5.innerText = "N/A";
     }
+  }
   const cell6 = row.insertCell();
 
   if (nationalPark.Phone) {
